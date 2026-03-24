@@ -12,10 +12,17 @@ const Tasks = () => {
 
   const tabs = ['All', 'Pending', 'Completed', 'Overdue'];
 
-  const filteredTasks = tasks.filter((task) => {
+  const priorityOrder = { 'High': 1, 'Medium': 2, 'Low': 3 };
+
+  const filteredTasks = tasks
+  .filter((task) => {
     if (activeTab === 'All') return true;
     return task.status === activeTab;
-  });
+  })
+  // Sort them so High is always at the top
+  .sort((a, b) => priorityOrder[a.priority] - priorityOrder[b.priority]);
+
+  
 
   return (
     <div>
