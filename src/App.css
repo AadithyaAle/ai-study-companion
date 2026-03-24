@@ -192,3 +192,33 @@
     transform: rotate(360deg);
   }
 }
+
+/* --- Light Mode Colors (Default) --- */
+:root {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --sidebar-bg: #1e293b;
+  --sidebar-hover: #334155;
+}
+
+/* --- Dark Mode Colors --- */
+[data-theme='dark'] {
+  --bg-main: #0f172a;
+  --bg-card: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --sidebar-bg: #020617;
+  --sidebar-hover: #1e293b;
+}
+
+/* Add a smooth transition when switching themes */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+}

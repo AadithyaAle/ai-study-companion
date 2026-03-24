@@ -32,8 +32,16 @@ const loadFromStorage = (key, defaultValue) => {
 // 2. Create the Provider Component
 export const StudyProvider = ({ children }) => {
   
-  // --- Initialize State ---
-  // We lazily check local storage. If nothing is there, we use the defaults.
+  // --- Initialize Theme State ---
+  const [theme, setTheme] = useState(() => loadFromStorage('study_theme', 'light'));
+
+  // --- Apply Theme to the HTML Document ---
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('study_theme', JSON.stringify(theme));
+  }, [theme]);
+
+  // --- Initialize Data State ---
   const [subjects, setSubjects] = useState(() => loadFromStorage('study_subjects', defaultSubjects));
   const [topics, setTopics] = useState(() => loadFromStorage('study_topics', defaultTopics));
   const [tasks, setTasks] = useState(() => loadFromStorage('study_tasks', defaultTasks));
@@ -54,6 +62,8 @@ export const StudyProvider = ({ children }) => {
 
   // The 'value' prop contains everything we want to share across the app
   const contextValue = {
+    theme,
+    setTheme,
     subjects,
     setSubjects,
     topics,
