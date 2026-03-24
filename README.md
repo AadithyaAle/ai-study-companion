@@ -1,10 +1,3 @@
-Since your project is now technically complete and follows all the guidelines, a professional **README.md** is the final "seal of quality." It tells anyone visiting your GitHub exactly what you built, how it works, and how they can run it.
-
-Copy and paste this into a new file named `README.md` in your project's root folder:
-
------
-
-````markdown
 # 🚀 AI-Powered Study Companion
 
 A high-performance, dark-themed React application designed to help students organize subjects, track tasks, and leverage AI for instant study materials. Built with a sleek **Red & Black "Tech Noir"** aesthetic.
