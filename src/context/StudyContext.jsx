@@ -60,12 +60,19 @@ export const StudyProvider = ({ children }) => {
     localStorage.setItem('study_tasks', JSON.stringify(tasks));
   }, [tasks]);
 
+  const deleteSubject = (subjectId) => {
+  setSubjects(prev => prev.filter(s => s.id !== subjectId));
+  // Optional: Also delete tasks associated with this subject
+  setTasks(prev => prev.filter(t => t.subjectId !== subjectId));
+  };
+
   // The 'value' prop contains everything we want to share across the app
   const contextValue = {
     theme,
     setTheme,
     subjects,
     setSubjects,
+    deleteSubject,
     topics,
     setTopics,
     tasks,

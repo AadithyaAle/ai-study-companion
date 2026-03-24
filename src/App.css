@@ -1,3 +1,21 @@
+:root {
+  --bg-main: #0a0a0a;       /* Very dark gray/black for the main background */
+  --bg-card: #171717;       /* Slightly lighter black for cards to stand out */
+  --text-main: #f8fafc;     /* Crisp white for main text */
+  --text-muted: #94a3b8;    /* Slate gray for secondary text */
+  --border-color: #262626;  /* Dark subtle borders */
+  --sidebar-bg: #000000;    /* Pure black for the sidebar */
+  --sidebar-hover: #450a0a; /* Deep, dark red for hovering over links */
+  --accent-red: #dc2626;    /* Bright, aggressive red for active items/buttons */
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  margin: 0;
+  font-family: sans-serif;
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;

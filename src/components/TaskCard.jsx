@@ -12,9 +12,9 @@ const TaskCard = ({ task, updateTaskStatus, deleteTask }) => {
       transition={{ duration: 0.3 }}
       style={{
         padding: '15px 20px',
-        backgroundColor: 'white',
+        backgroundColor: 'var(--bg-card)',       
+        border: '1px solid var(--border-color)', 
         borderRadius: '8px',
-        boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
