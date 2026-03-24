@@ -22,12 +22,22 @@ body {
   margin: 0;
   background-color: var(--bg-main);
   color: var(--text-body);
-  /* Using the new Inter font instead of system default */
   font-family: 'Inter', sans-serif; 
   -webkit-font-smoothing: antialiased;
 }
 
-/* Scrollbar for the dark theme */
+/* --- THE FIX: Custom Text Selection --- */
+::selection {
+  background-color: var(--accent-red);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: var(--accent-red);
+  color: #ffffff;
+}
+
+/* --- Scrollbar --- */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -42,10 +52,18 @@ body {
   background: var(--accent-red);
 }
 
+/* --- Utilities --- */
 .spin {
   animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
   100% { transform: rotate(360deg); }
+}
+
+/* Helper for your main titles to ensure visibility */
+.page-title {
+  color: #ffffff !important;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }

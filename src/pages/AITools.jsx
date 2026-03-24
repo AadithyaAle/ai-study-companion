@@ -61,6 +61,39 @@ const AITools = () => {
       <div style={{ display: 'flex', alignItems: 'center', gap: '15px', paddingBottom: '20px', borderBottom: '1px solid #e2e8f0' }}>
         <FiCpu size={28} color="#3b82f6" />
         <h1 style={{ fontSize: '1.5rem', color: '#0f172a', margin: 0 }}>Gemini Study Chat</h1>
+        {/* Header */}
+<div style={{ 
+  display: 'flex', 
+  alignItems: 'center', 
+  justifyContent: 'space-between', 
+  width: '100%', 
+  paddingBottom: '20px', 
+  borderBottom: '1px solid var(--border-color)',
+  marginBottom: '20px' 
+}}>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+    <FiCpu size={28} color="var(--accent-red)" />
+    {/* Explicitly setting this h1 to pure white */}
+    <h1 style={{ fontSize: '1.5rem', color: '#ffffff', margin: 0 }}>
+      Gemini Study Chat
+    </h1>
+  </div>
+  
+  <button 
+    onClick={() => setMessages([{ role: 'model', text: 'Chat cleared. How can I help you now?' }])}
+    style={{ 
+      background: 'transparent', 
+      border: '1px solid var(--border-color)', 
+      color: 'var(--text-muted)', 
+      padding: '5px 12px', 
+      borderRadius: '6px', 
+      cursor: 'pointer', 
+      fontSize: '0.8rem' 
+    }}
+  >
+    Clear Chat
+  </button>
+</div>
       </div>
 
       {/* Chat Messages Area */}
