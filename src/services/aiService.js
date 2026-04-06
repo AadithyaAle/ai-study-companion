@@ -6,7 +6,7 @@ const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 console.log("API Key Status:", API_KEY ? "Loaded Successfully! ✅" : "Missing! ❌");
 
 // We are strictly using the stable 1.5-flash endpoint
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
 export const generateStudyMaterial = async (prompt) => {
   if (!API_KEY) {
